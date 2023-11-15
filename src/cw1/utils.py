@@ -73,7 +73,7 @@ def ICV_transform_image(image, transform):
     
     return canvas
 
-def ICV_cw1(image, theta1, theta2, flag=None):
+def ICV_cw1(image, theta1, theta2=60, flag=None):
 
     # Theta1 is used for Rotations
     theta1 = np.radians(theta1)
@@ -87,7 +87,11 @@ def ICV_cw1(image, theta1, theta2, flag=None):
     # Shear matrix
     t_shear =  ICV_t_shear(theta2)
 
-    # Calculate the transformation matrix for rotating by θ1 and skewing by θ2
+    # Calculate transform based on assignment task
+    if flag == "rotate":
+        transform = t_rotate
+    if flag == "shear":
+        transform = t_shear
     if flag == "reverse":
         transform = np.dot(t_rotate, t_shear)
     else:
