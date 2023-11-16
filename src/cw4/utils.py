@@ -33,3 +33,36 @@ def ICV_img_windows(image):
     plt.savefig(fname=f'../../output/cw4/img_windows.png')
 
     return result
+
+# Define a function that calculates the Local Binary Pattern (LBP) histogram for a given image
+def ICV_img_lbp(image):
+
+    img_length = len(image)
+    lbp_index = []
+    
+    for i in range(img_length-3):
+        for j in range(img_length-3):
+            center = image[i+1, j+1]
+            kernel = image[i:i+3, j:j+3]
+            # create an LBP array consisting of 0s and 1s for values greater than the center
+            lbp = (kernel > center).astype(int)
+            # realign ordering for LBP arrays
+            lbp = np.array((lbp[0,0], lbp[0,1], lbp[0,2], lbp[1,2], lbp[2,2], lbp[2,1], lbp[2,0], lbp[1,0]))
+            # Calculate Base10 LBP value of the pixel  
+            base2 = np.array((128, 64, 32, 16, 8, 4, 2, 1))
+            lbp *= base2
+            # Normalize
+            result = np.sum(lbp)/256
+            lbp_index.append(result)
+    
+    return lbp_index
+
+# Function to plot the lbp histograms and return the LBP values to be used as descriptors
+def ICV_img_lbp_hist(images):
+    # Loop through image windows and plot the LBP Histograms
+    lbp_hists = []
+    for img in images:
+        result = ICV_img_lbp(img)
+        lbp_hists.append(result)
+
+    return lbp_hists
