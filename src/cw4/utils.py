@@ -19,19 +19,6 @@ def ICV_img_windows(image):
         image[im_x*2:, im_y*2:],
     ]
 
-    # Plot equally divided shapes
-    fig, axs = plt.subplots(3, 3)
-    axs[0, 0].imshow(result[0], cmap="gray")
-    axs[0, 1].imshow(result[1], cmap="gray")
-    axs[0, 2].imshow(result[2], cmap="gray")
-    axs[1, 0].imshow(result[3], cmap="gray")
-    axs[1, 1].imshow(result[4], cmap="gray")
-    axs[1, 2].imshow(result[5], cmap="gray")
-    axs[2, 0].imshow(result[6], cmap="gray")
-    axs[2, 1].imshow(result[7], cmap="gray")
-    axs[2, 2].imshow(result[8], cmap="gray")
-    plt.savefig(fname=f'../../output/cw4/img_windows.png')
-
     return result
 
 # Define a function that calculates the Local Binary Pattern (LBP) histogram for a given image
@@ -51,18 +38,60 @@ def ICV_img_lbp(image):
             # Calculate Base10 LBP value of the pixel  
             base2 = np.array((128, 64, 32, 16, 8, 4, 2, 1))
             lbp *= base2
-            # Normalize
-            result = np.sum(lbp)/256
+            result = np.sum(lbp)
             lbp_index.append(result)
     
     return lbp_index
 
-# Function to plot the lbp histograms and return the LBP values to be used as descriptors
+# Function to return LBP descriptors and histogram data
 def ICV_img_lbp_hist(images):
     # Loop through image windows and plot the LBP Histograms
+    lbp_data = []
     lbp_hists = []
     for img in images:
         result = ICV_img_lbp(img)
-        lbp_hists.append(result)
+        # Numpy histogram function will return the data set using 256 bins representative of each RGB value
+        (hist, _) = np.histogram(result, bins=256)
+        lbp_hists.append(hist)
+        lbp_data.append(result)
 
-    return lbp_hists
+    return (lbp_data, lbp_hists)
+
+
+def ICV_img_global_desc(descriptors):
+    global_desc = []
+    for desc in descriptors:
+        global_desc.append(desc)
+    return global_desc
+
+
+def ICV_plot_figs(figures, img_name):
+    x = np.arange(256)
+    plt.figure(figsize=(12, 12))
+    fig, axs = plt.subplots(3, 3)
+    axs[0, 0].bar(x, figures[0])
+    axs[0, 1].bar(x, figures[1])
+    axs[0, 2].bar(x, figures[2])
+    axs[1, 0].bar(x, figures[3])
+    axs[1, 1].bar(x, figures[4])
+    axs[1, 2].bar(x, figures[5])
+    axs[2, 0].bar(x, figures[6])
+    axs[2, 1].bar(x, figures[7])
+    axs[2, 2].bar(x, figures[8])
+
+    # Save the histograms
+    plt.savefig(fname=f'../../output/cw4/{img_name}_lbp_hists.png')
+
+def ICV_plot_windows(windows, img_name):
+    # Plot equally divided shapes
+    fig, axs = plt.subplots(3, 3)
+    axs[0, 0].imshow(windows[0], cmap="gray")
+    axs[0, 1].imshow(windows[1], cmap="gray")
+    axs[0, 2].imshow(windows[2], cmap="gray")
+    axs[1, 0].imshow(windows[3], cmap="gray")
+    axs[1, 1].imshow(windows[4], cmap="gray")
+    axs[1, 2].imshow(windows[5], cmap="gray")
+    axs[2, 0].imshow(windows[6], cmap="gray")
+    axs[2, 1].imshow(windows[7], cmap="gray")
+    axs[2, 2].imshow(windows[8], cmap="gray")
+    plt.savefig(fname=f'../../output/cw4/{img_name}_windows.png')
