@@ -1,5 +1,5 @@
 # ECS709P Computer Vision
-Author: Garrett Poell (230460269)
+Author: Garrett Poell (230460269)  
 Email: g.poell@se23.qmul.ac.uk
 
 
