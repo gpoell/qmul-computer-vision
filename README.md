@@ -19,42 +19,42 @@ Inside of the src/ directory are folders for each coursework task that contain a
 
 
 ### Folder Structure
-> data
-    > DatasetA
-        car-1.jpg
-        car-2.jpg
-        car-3.jpg
-        face-1.jpg
-        face-2.jpg
-        face-3.jpg
-    cw1_b.png
-    DatasetB.avi
-    DatasetC.avi
-    DatasetC.mpg
-    test.jpg
-> output
-    > cw1
-    > cw2
-    > cw3
-        > figures
-        > video_out
-    > cw4
-    > cw5
-        > frame_diff
-        > video_out
-> src
-    > cw1
-        main.ipynb
-        utils.py
-    > cw2
-        main.ipynb
-        utils.py
-    > cw3
-        main.ipynb
-        utils.py
-    > cw4
-        main.ipynb
-        utils.py
-    > cw5
-        main.ipynb
-        utils.py
+> data  
+    > DatasetA  
+        car-1.jpg  
+        car-2.jpg  
+        car-3.jpg  
+        face-1.jpg  
+        face-2.jpg  
+        face-3.jpg  
+    cw1_b.png  
+    DatasetB.avi  
+    DatasetC.avi  
+    DatasetC.mpg  
+    test.jpg  
+> output  
+    > cw1  
+    > cw2  
+    > cw3  
+        > figures  
+        > video_out  
+    > cw4  
+    > cw5  
+        > frame_diff  
+        > video_out  
+> src  
+    > cw1  
+        main.ipynb  
+        utils.py  
+    > cw2  
+        main.ipynb  
+        utils.py  
+    > cw3  
+        main.ipynb  
+        utils.py  
+    > cw4  
+        main.ipynb  
+        utils.py  
+    > cw5  
+        main.ipynb  
+        utils.py  
