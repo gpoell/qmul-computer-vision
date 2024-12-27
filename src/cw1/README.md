@@ -1,5 +1,4 @@
-### Coursework Instructions
-**CW1: Transformations**
+### CW1: Transformations
 Rotation, translation and skew are useful operations for matching, tracking, and data augmentation.
 
 a. Write a function that takes as input an image I, rotates it by an angle θ1 and horizontally skews it by

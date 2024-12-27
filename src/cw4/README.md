@@ -1,5 +1,4 @@
-### Coursework Instructions
-**CW4: Texture Classification**
+### CW4: Texture Classification
 The Local Binary Pattern (LBP) operator describes the surroundings of a pixel by generating a bit-code
 from the binary derivatives of a pixel.
 

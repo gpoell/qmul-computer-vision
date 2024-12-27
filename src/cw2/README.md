@@ -1,5 +1,4 @@
-### Coursework Instructions
-**CW2: Convolution**
+### CW2: Convolution
 Convolution provides a way of multiplying two arrays to produce a third array. Depending on the designed
 filter and the intended effect, the kernel can be a matrix of dimensions, for example, 3x3, 5x5 or 7x7.
 

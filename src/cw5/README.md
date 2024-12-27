@@ -1,5 +1,4 @@
-### Coursework Instructions
-**CW5: Object Counting**
+### CW5: Object Counting
 Moving objects captured by fixed cameras are the focus of several computer vision applications.
 
 a. Write a function that performs pixel-by-pixel frame differencing using, as reference frame, the first
