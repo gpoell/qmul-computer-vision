@@ -10,6 +10,7 @@ Use this kernel and the filtering function above, and save the resulting image.
 
 c. Use the kernels provided below, apply the filtering function and save the resulting images. Comment
 on the effect of each kernel.
+
 kernel A<br>
 1   2   1<br>
 2   4   2<br>
