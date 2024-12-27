@@ -15,6 +15,7 @@ kernel A<br>
 1   2   1<br>
 2   4   2<br>
 1   2   1<br>
+
 kernel B<br>
 0   1   0<br>
 1  -4   1<br>
