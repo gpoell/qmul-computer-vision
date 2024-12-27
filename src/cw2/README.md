@@ -11,15 +11,15 @@ Use this kernel and the filtering function above, and save the resulting image.
 c. Use the kernels provided below, apply the filtering function and save the resulting images. Comment
 on the effect of each kernel.
 
-    kernel A<br>
-    1   2   1<br>
-    2   4   2<br>
-    1   2   1<br>
+    kernel A
+    1   2   1
+    2   4   2
+    1   2   1
 
-    kernel B<br>
-    0   1   0<br>
-    1  -4   1<br>
-    0   1   0<br>
+    kernel B
+    0   1   0
+    1  -4   1
+    0   1   0
 
 d. Use the filtering function for the following filtering operations: (i) A followed by A; (ii) A followed by B;
 (iii) B followed by A. Comment the results.
